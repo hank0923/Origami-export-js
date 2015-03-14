@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Orgami Export JS</title>
+ 
+  <!-- include rebound and the exported code -->
+  <script src="http://facebook.github.io/rebound-js/rebound.min.js"></script>
+  <script src="orgami.js"></script>
+ 
+
+  <style type="text/css">
+    #container {
+      position: relative;
+      width: 370px;
+      height: 667px;
+      background: #fff;
+      overflow: hidden;
+      margin: auto;
+      border: 1px solid #555;
+    }
+
+    #button {
+      position: absolute;
+      top:30%;
+        left:24%;
+      height: 150px;
+      width: 200px;
+      background-size: 200px 150px;
+      background-image: url(button.png);
+    }
+
+    }
+  </style>
+ 
+  <script type="text/javascript">
+    // Plugin your html to the sample code when the document is loaded and add
+    // your UI event handlers.
+    document.addEventListener('DOMContentLoaded', function() {
+      
+      // hook up the elements in my sample html
+      layers.button.domElement = document.getElementById('button');
+
+      // add a click handler
+       
+        document.getElementById('button').addEventListener(
+        'mousedown',  function() {bouncy(1); 
+                             });
+        
+        document.getElementById('button').addEventListener(
+        'mouseup',  function() {bouncy(0); 
+                             });
+        
+        document.getElementById('button').addEventListener(
+        'mouseout',  function() {bouncy(0); 
+                             });
+        
+     
+    })
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div id="button" />
+  </div>
+</body>
+</html>
